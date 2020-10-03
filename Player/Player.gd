@@ -5,8 +5,8 @@ const ACCELERATION = 10
 const FRICTION = 10
 
 var velocity = Vector2.ZERO
-#onready var animationTree = $AnimationTree
-#onready var animationState = animationTree.get("parameters/playback")
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
 
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
@@ -20,14 +20,14 @@ func _physics_process(_delta):
 	if input_vector != Vector2.ZERO:
 		# Set blend position of each node of the animation tree 
 		# to be equal to the input vector to play the correct animation OwO
-		#animationTree.set("parameters/Idle/blend_position", input_vector)
-		#animationTree.set("parameters/Walk/blend_position", input_vector)
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Walk/blend_position", input_vector)
 		
 		# Animation set up to prioritize walk left/right over up/down when walking diagonally UwU
-		#animationState.travel("Walk")
+		animationState.travel("Walk")
 		velocity = velocity.move_toward(input_vector * SPEED, ACCELERATION)
 	else:
-		#animationState.travel("Idle")
+		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 	
 	# Apply movement and collisions with this godlike godot function that fixes issues
