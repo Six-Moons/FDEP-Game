@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Walking_Up.png-260bea58910c3f1b039a6e23e574f9be.stex"
+path="res://.import/Mapache.png-92c00d2aac79c4dc3c96da71bf550bc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Walking_Up.png"
-dest_files=[ "res://.import/Walking_Up.png-260bea58910c3f1b039a6e23e574f9be.stex" ]
+source_file="res://Sprites/Aseprite/Mapache.png"
+dest_files=[ "res://.import/Mapache.png-92c00d2aac79c4dc3c96da71bf550bc2.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
-flags/filter=false
-=======
 flags/filter=true
->>>>>>> 8e6aaf0a4bd83b0e4b1eab1f21e636ae84172544
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -34,9 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-<<<<<<< HEAD
-detect_3d=false
-=======
 detect_3d=true
->>>>>>> 8e6aaf0a4bd83b0e4b1eab1f21e636ae84172544
 svg/scale=1.0
