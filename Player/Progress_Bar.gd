@@ -15,3 +15,7 @@ func animate_value(start, end):
 	$Tween.interpolate_property($TextureProgress, "value", start, end, 1, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 	$Tween.start()
 	
+
+func _on_Tween_tween_step(object, key, elapsed, value):
+	print (value)
+	pass # Replace with function body.

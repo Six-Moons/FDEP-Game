@@ -20,7 +20,7 @@ func _process(delta):
 	# Check whether the player is trying to interact
 	if (interaction_target != null):
 		if (Input.is_action_pressed("interact")):
-			interactionCounter += 0.01
+			interactionCounter += 20 * delta
 			if (!audioPlayer.playing):
 				playSound(progressSound)
 				pBar._on_interface_progress_changed(interactionCounter)

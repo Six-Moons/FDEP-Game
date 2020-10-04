@@ -2516,6 +2516,9 @@ script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+hat = NodePath("TextureRect/HBoxContainer/Sprite_s")
+shirt = NodePath("TextureRect/HBoxContainer/Sprite_p")
+acc = NodePath("TextureRect/HBoxContainer/Sprite_a")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Inventario"]
 margin_right = 104.0
