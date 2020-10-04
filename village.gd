@@ -9,7 +9,7 @@ var dante1 = preload("res://Sprites/dante_1.png")
 var rng = RandomNumberGenerator.new()
 var pathChild
 var posPathChild
-var gamePlaying = false
+var game_state = "Starting"
 
 func addPathListeners():
 	posPathChild = 0
@@ -31,9 +31,11 @@ func addPathListeners():
 func _ready():
 	addPathListeners()
 	emit_signal("game_started")
+	game_state = "Playing"
 	pass
 
 func _on_Enemy_grabbed_player():
 	print("ewe")
+	game_state = "Lost"
 	emit_signal("game_stopped")
 	pass # Replace with function body.
