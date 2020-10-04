@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gotcha.wav-66339e1850436fd9fe3fdc72384fb6c6.sample"
+
+[deps]
+
+source_file="res://sounds/gotcha.wav"
+dest_files=[ "res://.import/gotcha.wav-66339e1850436fd9fe3fdc72384fb6c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
