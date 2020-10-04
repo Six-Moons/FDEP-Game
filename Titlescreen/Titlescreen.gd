@@ -4,7 +4,8 @@ onready var tween_values = [1, 1.2]
 onready var initialScale = $StartButton.scale
 
 func _ready():
-	_start_tween()
+#	_start_tween()
+	pass
 
 func _start_tween():
 	$StartButton.scale = initialScale
@@ -18,13 +19,10 @@ func _start_tween():
 	$StartButton/Tween.start()
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_ENTER):
+	if Input.is_key_pressed(KEY_ENTER) or Input.is_mouse_button_pressed(BUTTON_LEFT):
 		get_tree().change_scene("res://village.tscn")
 
 func _on_Tween_tween_completed(object, key):
-#	var n = tween_values[0]
-#	tween_values[0] = tween_values[1]
-#	tween_values[1] = n
 	tween_values.invert()
 	_start_tween()
 	pass # Replace with function body.
