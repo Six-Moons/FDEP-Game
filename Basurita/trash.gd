@@ -15,9 +15,10 @@ func interaction_get_text() -> String:
 func interaction_interact(interactionComponentParent : Node) -> void:
 	if is_open:
 		return
-
-	is_open = true
-	get_node("Sprite").set_texture(usedSprite)
+	
+	set_used()
+	
+	
 
 	# Remove from interaction layer
 	# This will cause it to leave the interaction components overlap, which will hide our UI
@@ -25,3 +26,7 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 	# If you don't know binary, just hover over the layer in the inspector
 	# In my case it shows "interactable Bit 2, value 4" <- the value is what we need
 	collision_layer = collision_layer ^ 4
+
+func set_used() -> void:
+	is_open = true
+	get_node("Sprite").set_texture(usedSprite)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Progress_Bar.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
@@ -306,6 +307,7 @@ frame = 3
 
 [node name="InteractionComponent" parent="Sprite" instance=ExtResource( 3 )]
 interaction_parent = NodePath("../..")
+pBar_path = NodePath("../../CanvasLayer/InteractionComponentUI/Progress_Bar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
@@ -345,3 +347,14 @@ limit_bottom = 1264
 
 [node name="InteractionComponentUI" parent="CanvasLayer" instance=ExtResource( 4 )]
 interaction_component_nodepath = NodePath("../../Sprite/InteractionComponent")
+
+[node name="Progress_Bar" parent="CanvasLayer/InteractionComponentUI" instance=ExtResource( 5 )]
+anchor_left = -2.5
+anchor_top = 1.5
+anchor_right = -2.5
+anchor_bottom = 1.5
+margin_left = 328.0
+margin_top = -16.0
+margin_right = 363.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1.5, 1 )
