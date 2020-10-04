@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Basurita/Basurita.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -41,3 +42,7 @@ rotate = false
 
 [node name="Enemy" parent="Path2D/PathFollow2D3" instance=ExtResource( 2 )]
 position = Vector2( 80, 32 )
+
+[node name="Basuras" type="Node2D" parent="."]
+
+[node name="Basurita" parent="Basuras" instance=ExtResource( 3 )]
