@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FDEP-Game"
-run/main_scene="res://World.tscn"
+run/main_scene="res://village.tscn"
 config/icon="res://icon.png"
 
 [display]

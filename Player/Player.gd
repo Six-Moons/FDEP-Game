@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 80
+const SPEED = 100
 const ACCELERATION = 10
 const FRICTION = 10
 
@@ -33,3 +33,5 @@ func _physics_process(_delta):
 	# Apply movement and collisions with this godlike godot function that fixes issues
 	# with weird edges and makes you _slide_  **GASPS**  └(>o< )┘	
 	velocity = move_and_slide(velocity)
+	position.x = clamp( position.x, 0, 1152) 
+	position.y = clamp( position.y, 0, 1264)

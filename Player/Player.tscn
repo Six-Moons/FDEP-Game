@@ -3,8 +3,8 @@
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=24]
-radius = 10.0087
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.3609
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle_down"
@@ -227,3 +227,10 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 1264
