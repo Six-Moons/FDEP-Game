@@ -60,8 +60,6 @@ func _on_InteractionComponent_body_entered(body):
 func _on_InteractionComponent_body_exited(body):
 	if (body == interaction_target):
 		interaction_target = null
-		if (interactionCounter > 0):
-			playSound(failSound)
 		interactionCounter = 0
 		pBar._on_interface_progress_changed(interactionCounter)
 		emit_signal("on_interactable_changed", null)
