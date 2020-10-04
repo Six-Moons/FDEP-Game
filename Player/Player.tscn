@@ -295,7 +295,9 @@ graph_offset = Vector2( -57, -41 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -304,7 +306,9 @@ vframes = 7
 hframes = 4
 frame = 3
 
-[node name="InteractionComponent" parent="Sprite" instance=ExtResource( 3 )]
+[node name="InteractionComponent" parent="Sprite" groups=[
+"player",
+] instance=ExtResource( 3 )]
 interaction_parent = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

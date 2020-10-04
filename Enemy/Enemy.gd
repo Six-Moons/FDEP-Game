@@ -4,9 +4,9 @@ const SPEED = 40
 const ACCELERATION = 10
 const FRICTION = 10
 
-export (int) var caughtRadius = 30;
-export (int) var detectionRadius = 50;
-export (int) var pursueRadius = 80
+#export (int) var caughtRadius = 30;
+#export (int) var detectionRadius = 50;
+#export (int) var pursueRadius = 80
 var state = "Walking" # Walking, Pursuing, Returning
 export (Vector2) onready var initialPosition = Vector2(256, 128)
 
@@ -23,7 +23,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	global_position = get_parent().global_position
 	rng.randomize()
-	var my_random_number = rng.randf_range(-50.0, 50.0)
+	var my_random_number = rng.randf_range(-100.0, 100.0)
 	path.set_offset(path.get_offset() + (50 * my_random_number))
 
 func _physics_process(_delta):
@@ -44,16 +44,11 @@ func _physics_process(_delta):
 		animationState.travel("Run")
 		
 		global_position = path.global_position
-		
-		if input_vector.length() < detectionRadius:
-			state = "Pursuing"
 	elif state == "Pursuing":
 		animationTree.set("parameters/Idle/blend_position", movement_vector)
 		animationTree.set("parameters/Run/blend_position", movement_vector)
 		animationState.travel("Run")
 		velocity = velocity.move_toward(movement_vector * SPEED, ACCELERATION)
-		if input_vector.length() > pursueRadius:
-			state = "Returning"
 	elif state == "Returning":
 		dir = (path.global_position - global_position)
 
@@ -68,3 +63,23 @@ func _physics_process(_delta):
 			animationTree.set("parameters/Run/blend_position",  dir.normalized())
 			animationState.travel("Run")
 	velocity = move_and_slide(velocity)
+
+func _on_Grab_body_entered(body):
+	if body.is_in_group("player"): 
+		print("game over buddy")
+		# game over
+	pass # Replace with function body.
+
+
+func _on_Walk_body_entered(body):
+	if body.is_in_group("player"): 
+#		print(body)
+		state = "Pursuing"
+	pass # Replace with function body.
+
+
+func _on_Pursue_body_exited(body):
+	if body.is_in_group("player"): 
+#		print(body)
+		state = "Returning"
+	pass # Replace with function body.
