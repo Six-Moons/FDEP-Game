@@ -20,7 +20,7 @@ func _ready():
 	var root = get_parent().get_parent().get_parent().get_parent()
 	print (root.has_signal("game_started"))
 	print (root)
-	root.connect("game_started", self, "_on_Village_game_started")
+#	root.connect("game_started", self, "_on_Village_game_started")
 	root.connect("game_stopped", self, "_on_Village_game_stopped")
 	global_position = get_parent().global_position
 	rng.randomize()

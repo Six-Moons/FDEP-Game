@@ -34,7 +34,10 @@ func _physics_process(_delta):
 			# Animation set up to prioritize walk left/right over up/down when walking diagonally UwU
 			animationState.travel("Walk")
 			velocity = velocity.move_toward(input_vector * SPEED, ACCELERATION)
+			if !$Walking.playing:
+				$Walking.play()
 		else:
+			$Walking.stop()
 			animationState.travel("Idle")
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 		

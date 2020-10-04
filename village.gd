@@ -15,7 +15,7 @@ func addPathListeners():
 	posPathChild = 0
 	pathChild = $Node2D/Path2D.get_child(posPathChild)
 	while pathChild != null:
-		self.connect("grabbed_player", pathChild.get_node("Enemy"), "_on_Enemy_grabbed_player")
+#		self.connect("grabbed_player", pathChild.get_node("Enemy"), "_on_Enemy_grabbed_player")
 		rng.randomize()
 		var randNum = int(round(rng.randf_range(0.0, 2.0)))
 		
@@ -30,9 +30,13 @@ func addPathListeners():
 
 func _ready():
 	addPathListeners()
-	emit_signal("game_started")
-	game_state = "Playing"
+	game_state = "Started"
 	pass
+	
+func _physics_process(delta):
+	if game_state == "Started":
+		game_state = "Playing"
+		emit_signal("game_started")
 
 func _on_Enemy_grabbed_player():
 	print("ewe")

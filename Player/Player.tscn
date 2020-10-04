@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/walking-in-snow-1.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
@@ -349,3 +350,7 @@ limit_bottom = 1264
 
 [node name="InteractionComponentUI" parent="CanvasLayer" instance=ExtResource( 4 )]
 interaction_component_nodepath = NodePath("../../Sprite/InteractionComponent")
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+attenuation = 0.0126914
