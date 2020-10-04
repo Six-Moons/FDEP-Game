@@ -2500,6 +2500,7 @@ tile_data = PoolIntArray( -262127, 0, 917509, -262126, 0, 917510, -196597, 0, 91
 [connection signal="game_started" from="." to="Node2D/Path2D/PathFollow2D3/Enemy" method="_on_Village_game_started"]
 [connection signal="game_started" from="." to="Node2D/Path2D/PathFollow2D9/Enemy" method="_on_Village_game_started"]
 [connection signal="game_started" from="." to="Node2D/Path2D/PathFollow2D10/Enemy" method="_on_Village_game_started"]
+[connection signal="game_started" from="." to="HUD" method="_on_Village_game_started"]
 [connection signal="game_stopped" from="." to="Node2D/Player" method="_on_Village_game_stopped"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
