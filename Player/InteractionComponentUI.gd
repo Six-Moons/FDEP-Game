@@ -59,7 +59,6 @@ func interactable_target_changed(newInteractable : Node) -> void:
 	# Record the position we should fix ourselves to
 	# This should be just above the interactable item
 	fixed_position = newInteractable.get_global_transform_with_canvas().origin - (newInteractable.get_node("Sprite").texture.get_size() * newInteractable.get_node("Sprite").transform.get_scale().x)
-	#fixed_position = Vector2(newInteractable.get_global_position().x - (get_rect().size.x / 2), newInteractable.get_global_position().y - newInteractable.get_node("Sprite").texture.get_size().y * newInteractable.get_node("Sprite").transform.get_scale().y)
 	
 	# Move to our fixed position
 	self.set_position(fixed_position)
