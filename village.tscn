@@ -1,4 +1,4 @@
-[gd_scene load_steps=255 format=2]
+[gd_scene load_steps=260 format=2]
 
 [ext_resource path="res://Sprites/gentle forest, moonlight palette.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/houses.png" type="Texture" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Basurita/trash.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Sombrero.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Playera.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Accesorios.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/generic-rpg-ui-inventario01.png" type="Texture" id=10]
+[ext_resource path="res://Inventario.gd" type="Script" id=12]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=14]
 [ext_resource path="res://WinScreen/WinScreen.tscn" type="PackedScene" id=15]
 
@@ -2501,24 +2506,83 @@ tile_data = PoolIntArray( -262127, 0, 917509, -262126, 0, 917510, -196597, 0, 91
 [node name="WinScreen" parent="." instance=ExtResource( 15 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventario" type="Control" parent="CanvasLayer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 109.0
+margin_bottom = 45.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Inventario"]
+margin_right = 104.0
+margin_bottom = 35.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventario/TextureRect"]
+margin_right = 104.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite_p" type="TextureRect" parent="CanvasLayer/Inventario/TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite_a" type="TextureRect" parent="CanvasLayer/Inventario/TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+
+[node name="Sprite_s" type="TextureRect" parent="CanvasLayer/Inventario/TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPaTontas" type="Label" parent="CanvasLayer/Inventario"]
+margin_top = 36.0
+margin_right = 127.0
+margin_bottom = 71.0
+text = "Colecciona los 3!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_started" from="." to="Node2D/Player" method="_on_Node2D_game_started"]
 [connection signal="game_stopped" from="." to="Node2D/Player" method="_on_Node2D_game_stopped"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D2/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D2/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D2/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D3/Enemy" to="." method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D4/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D4/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D5/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D4/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D5/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D6/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D5/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D6/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D7/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D6/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D7/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D8/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D7/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D8/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D9/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D8/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D9/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
-[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D10/Enemy" to="." method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D9/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D10/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
+[connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D10/Enemy" to="." method="_on_Enemy_grabbed_player"]
