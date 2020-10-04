@@ -5,14 +5,15 @@ const ACCELERATION = 10
 const FRICTION = 10
 
 export (int) var caughtRadius = 30;
-export (int) var detectionRadius = 40;
-export (int) var pursueRadius = 50
+export (int) var detectionRadius = 50;
+export (int) var pursueRadius = 80
 var state = "Walking" # Walking, Pursuing, Returning
 export (Vector2) onready var initialPosition = Vector2(256, 128)
 
 var velocity = Vector2.ZERO
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+#onready var player = get_parent().get_parent().get_parent().get_node("Node2D/Player")
 onready var player = get_parent().get_parent().get_parent().get_node("Player")
 onready var path = get_parent()
 #onready var path = get_parent().get_child(3).get_child(0)
@@ -22,7 +23,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	global_position = get_parent().global_position
 	rng.randomize()
-	var my_random_number = rng.randf_range(0, 10.0)
+	var my_random_number = rng.randf_range(-50.0, 50.0)
 	path.set_offset(path.get_offset() + (50 * my_random_number))
 
 func _physics_process(_delta):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=245 format=2]
+[gd_scene load_steps=247 format=2]
 
 [ext_resource path="res://Sprites/gentle forest, moonlight palette.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/houses.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Path"
@@ -1138,6 +1139,11 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
+
+[sub_resource type="Curve2D" id=242]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 256, 208, 0, 0, 0, 0, 384, 208, 0, 0, 0, 0, 480, 208, 0, 0, 0, 0, 544, 208, 0, 0, 0, 0, 640, 208, 0, 0, 0, 0, 704, 208, 0, 0, 0, 0, 768, 208, 0, 0, 0, 0, 832, 208, 0, 0, 0, 0, 896, 208, 0, 0, 0, 0, 896, 320, 0, 0, 0, 0, 896, 384, 0, 0, 0, 0, 896, 448, 0, 0, 0, 0, 256, 448, 0, 0, 0, 0, 256, 704, 0, 0, 0, 0, 896, 704, 0, 0, 0, 0, 896, 992, 0, 0, 0, 0, 256, 992, 0, 0, 0, 0, 256, 1176, 0, 0, 0, 0, 896, 1176, 0, 0, 0, 0, 896, 992, 0, 0, 0, 0, 256, 992, 0, 0, 0, 0, 256, 704, 0, 0, 0, 0, 896, 704, 0, 0, 0, 0, 896, 448, 0, 0, 0, 0, 256, 448, 0, 0, 0, 0, 256, 208 )
+}
 
 [sub_resource type="ConvexPolygonShape2D" id=115]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -2359,6 +2365,79 @@ tile_data = PoolIntArray( -458732, 4, 0, -327670, 4, 0, -327663, 4, 0, -262129, 
 
 [node name="Player" parent="Node2D" instance=ExtResource( 3 )]
 position = Vector2( 304, 192 )
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+curve = SubResource( 242 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D2" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D3" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D4" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D4" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D5" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D5" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D6" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D6" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D7" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D7" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D8" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D8" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D9" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D9" instance=ExtResource( 4 )]
+
+[node name="PathFollow2D10" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 256, 208 )
+rotation = -3.89693e-06
+rotate = false
+
+[node name="Enemy" parent="Node2D/Path2D/PathFollow2D10" instance=ExtResource( 4 )]
 
 [node name="TileMap_roofs" type="TileMap" parent="."]
 tile_set = SubResource( 241 )
