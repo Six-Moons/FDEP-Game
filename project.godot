@@ -9,12 +9,30 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "InteractableItem",
+"class": "ConsumableItem",
+"language": "GDScript",
+"path": "res://Basurita/ConsumableItem.gd"
+}, {
+"base": "Node",
+"class": "InteractableItem",
+"language": "GDScript",
+"path": "res://Basurita/InteractableItem.gd"
+}, {
+"base": "Control",
+"class": "InteractionComponentUI",
+"language": "GDScript",
+"path": "res://Player/InteractionComponentUI.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
+"ConsumableItem": "",
+"InteractableItem": "",
+"InteractionComponentUI": "",
 "Player": ""
 }
 
