@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -11,3 +12,6 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 216, 80 )
 polygon = PoolVector2Array( 72, -16, 88, -64, 184, -64, 272, 0, 296, 80, 280, 144, 200, 216, 72, 248, -72, 240, -208, 192, -216, 80, -208, 0, -152, 16, -128, 80, -88, 144, -8, 176, 96, 168, 168, 144, 176, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 256, 128 )
