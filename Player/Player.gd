@@ -47,14 +47,11 @@ func _physics_process(_delta):
 		position.x = clamp( position.x, 0, 1152) 
 		position.y = clamp( position.y, 0, 1264)
 
-
-func _on_Village_game_stopped():
-	print("mori xdxd")
-	gamePlaying = false
+func _on_Node2D_game_started():
+	gamePlaying = true
 	pass # Replace with function body.
 
 
-func _on_Village_game_started():
-	print("inicio el juego")
-	gamePlaying = true
+func _on_Node2D_game_stopped():
+	gamePlaying = false
 	pass # Replace with function body.
