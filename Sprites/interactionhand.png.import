@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Basura.png-2f272a71c84fc3f9baf333440810ff3a.stex"
+path="res://.import/interactionhand.png-ebd65fc2828d1c9fdf7cb05f467cbbde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Basura.png"
-dest_files=[ "res://.import/Basura.png-2f272a71c84fc3f9baf333440810ff3a.stex" ]
+source_file="res://Sprites/interactionhand.png"
+dest_files=[ "res://.import/interactionhand.png-ebd65fc2828d1c9fdf7cb05f467cbbde.stex" ]
 
 [params]
 

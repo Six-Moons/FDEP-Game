@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
@@ -206,6 +208,9 @@ vframes = 5
 hframes = 4
 frame = 3
 
+[node name="InteractionComponent" parent="Sprite" instance=ExtResource( 3 )]
+interaction_parent = NodePath("../..")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
 shape = SubResource( 1 )
@@ -234,3 +239,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 1264
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractionComponentUI" parent="CanvasLayer" instance=ExtResource( 4 )]
+interaction_component_nodepath = NodePath("../../Sprite/InteractionComponent")
