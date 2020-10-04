@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/gotcha.wav-66339e1850436fd9fe3fdc72384fb6c6.sample"
+path="res://.import/gotcha.wav-f440f414db18349641852959c06cf1a2.sample"
 
 [deps]
 
-source_file="res://sounds/gotcha.wav"
-dest_files=[ "res://.import/gotcha.wav-66339e1850436fd9fe3fdc72384fb6c6.sample" ]
+source_file="res://Sounds/gotcha.wav"
+dest_files=[ "res://.import/gotcha.wav-f440f414db18349641852959c06cf1a2.sample" ]
 
 [params]
 
