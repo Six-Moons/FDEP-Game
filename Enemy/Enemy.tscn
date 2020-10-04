@@ -202,7 +202,9 @@ radius = 104.06
 [sub_resource type="CircleShape2D" id=26]
 radius = 43.0056
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -257,6 +259,5 @@ shape = SubResource( 25 )
 [node name="WalkRad" type="CollisionShape2D" parent="Walk"]
 shape = SubResource( 26 )
 [connection signal="body_entered" from="Grab" to="." method="_on_Grab_body_entered"]
-[connection signal="area_entered" from="Pursue" to="." method="_on_Pursue_area_entered"]
 [connection signal="body_exited" from="Pursue" to="." method="_on_Pursue_body_exited"]
 [connection signal="body_entered" from="Walk" to="." method="_on_Walk_body_entered"]

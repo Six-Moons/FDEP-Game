@@ -23,3 +23,7 @@ func _ready():
 		pathChild = $Node2D/Path2D.get_child(posPathChild)
 		
 
+
+
+func _on_Enemy_grabbed_player():
+	pass # Replace with function body.
