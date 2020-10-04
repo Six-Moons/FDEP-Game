@@ -17,6 +17,9 @@ func _start_tween():
 								Tween.EASE_IN_OUT)  
 	$StartButton/Tween.start()
 
+func _process(delta):
+	if Input.is_key_pressed(KEY_ENTER):
+		get_tree().change_scene("res://village.tscn")
 
 func _on_Tween_tween_completed(object, key):
 #	var n = tween_values[0]
