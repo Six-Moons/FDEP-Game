@@ -17,16 +17,15 @@ onready var player = get_parent().get_node("Player")
 
 func _ready():
 	global_position = initialPosition
-	pass
 
 func _physics_process(_delta):
 	var input_vector = (player.global_position - global_position)
 	var movement_vector = input_vector.normalized()
-	
+
 	if state == "Walking":
 		var dir = (initialPosition - global_position)
-		
-		if dir == Vector2.ZERO or dir.length() <= 0.1:
+
+		if dir == Vector2.ZERO or dir.length() <= 0.5:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			animationState.travel("Idle")
 			global_position = initialPosition
