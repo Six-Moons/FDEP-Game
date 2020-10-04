@@ -21,13 +21,14 @@ func _physics_process(_delta):
 	animationTree.set("parameters/Run/blend_position", movement_vector)
 	
 	if state == "Walking":
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
-		var dir = (initialPosition - global_position).normalized()
-		if dir != Vector2.ZERO: 
-			velocity = velocity.move_toward(dir * SPEED, ACCELERATION)
-			animationState.travel("Run")
-		else:
+		var dir = (initialPosition - global_position)
+		if dir == Vector2.ZERO or dir.length() <= 0.1:
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			animationState.travel("Idle")
+			global_position = initialPosition
+		else:
+			velocity = velocity.move_toward(dir.normalized() * SPEED, ACCELERATION)
+			animationState.travel("Run")
 		if input_vector.length() < detectionRadius:
 			state = "Pursuing"
 	elif state == "Pursuing":
@@ -35,5 +36,4 @@ func _physics_process(_delta):
 		velocity = velocity.move_toward(movement_vector * SPEED, ACCELERATION)
 		if input_vector.length() > pursueRadius:
 			state = "Walking"
-	
 	velocity = move_and_slide(velocity)
