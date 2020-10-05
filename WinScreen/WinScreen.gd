@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 func _ready():
-	$Background.hide()
+#	$Background.hide()
+	pass
 
 func mostrar_disfraz(disfraz):
 	$Background.show()

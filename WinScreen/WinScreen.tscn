@@ -32,7 +32,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
 
 [node name="Ropa" type="Sprite" parent="Dom"]
-visible = false
 position = Vector2( 250.275, 136.574 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
@@ -58,7 +57,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 7 )
 
 [node name="Accesorio" type="Sprite" parent="Vaquero"]
-visible = false
 position = Vector2( 248.642, 137.12 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 8 )
@@ -66,7 +64,6 @@ texture = ExtResource( 8 )
 [node name="Marinero" type="Node" parent="."]
 
 [node name="Sombrero" type="Sprite" parent="Marinero"]
-visible = false
 position = Vector2( 249.576, 137.09 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 9 )
@@ -92,7 +89,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 12 )
 
 [node name="Ropa" type="Sprite" parent="Pirata"]
-visible = false
 position = Vector2( 253.257, 133.782 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 13 )
