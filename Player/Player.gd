@@ -49,8 +49,6 @@ func _physics_process(_delta):
 
 func _on_Node2D_game_started():
 	gamePlaying = true
-	pass # Replace with function body.
 
 func _on_Node2D_game_stopped():
 	gamePlaying = false
-	pass # Replace with function body.

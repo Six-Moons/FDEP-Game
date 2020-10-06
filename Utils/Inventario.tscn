@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/pixelTextFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Utils/Inventario.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Sombrero.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Accesorios.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/generic-rpg-ui-inventario01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Playera.png" type="Texture" id=6]
+
+[node name="Inventario" type="Control"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 109.0
+margin_bottom = 45.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hat = NodePath("../../InventoryHUD/Inventario/TextureRect/HBoxContainer/Sprite_s")
+shirt = NodePath("../../InventoryHUD/Inventario/TextureRect/HBoxContainer/Sprite_p")
+acc = NodePath("../../InventoryHUD/Inventario/TextureRect/HBoxContainer/Sprite_a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 104.0
+margin_bottom = 35.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+margin_right = 104.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite_p" type="TextureRect" parent="TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite_a" type="TextureRect" parent="TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Sprite_s" type="TextureRect" parent="TextureRect/HBoxContainer"]
+visible = false
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPaTontas" type="Label" parent="."]
+margin_top = 36.0
+margin_right = 127.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 1 )
+text = "Colecciona los 3!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

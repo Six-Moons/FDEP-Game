@@ -6,7 +6,6 @@ var random = 0
 var usedSprite = preload("res://Sprites/trash_can_used.png")
 var unusedSprite = preload("res://Sprites/trash_can.png")
 var is_open := false
-var original_layer
 func interaction_can_interact(interactionComponentParent : Node) -> bool:
 	return interactionComponentParent is Player
 
@@ -20,25 +19,25 @@ func interaction_interact(_interactionComponentParent : Node) -> void:
 	if is_open:
 		return
 	print(random)
-	if (!rootNode.hasShirt):
-		rootNode.hasShirt = true
+	if (!PlayerVariables.hasShirt):
+		PlayerVariables.hasShirt = true
 		rng.randomize()
 		random = rng.randi_range(0, 3)
-		get_shirt(rootNode.shirts[random])
-		rootNode.get_node("CanvasLayer/Inventario").showShirt()
+		get_shirt(PlayerVariables.shirts[random])
+		rootNode.get_node("InventoryHUD/Inventario").showShirt()
 	
-	elif (!rootNode.hasHat):
-		rootNode.hasHat = true
+	elif (!PlayerVariables.hasHat):
+		PlayerVariables.hasHat = true
 		rng.randomize()
 		random = rng.randi_range(0, 3)
-		get_hat(rootNode.hats[random])
-		rootNode.get_node("CanvasLayer/Inventario").showHat()
+		get_hat(PlayerVariables.hats[random])
+		rootNode.get_node("InventoryHUD/Inventario").showHat()
 	else:
-		rootNode.hasAcc = true
+		PlayerVariables.hasAcc = true
 		rng.randomize()
 		random = rng.randi_range(0, 3)
-		get_accesory(rootNode.accesories[random])
-		rootNode.get_node("CanvasLayer/Inventario").showAcc()
+		get_accesory(PlayerVariables.accesories[random])
+		rootNode.get_node("InventoryHUD/Inventario").showAcc()
 	set_used()
 
 	# Remove from interaction layer
@@ -46,19 +45,18 @@ func interaction_interact(_interactionComponentParent : Node) -> void:
 	# Collision_layer XOR 8 will give all current layers EXCEPT the layer with the bitwsie value 8
 	# If you don't know binary, just hover over the layer in the inspector
 	# In my case it shows "interactable Bit 2, value 4" <- the value is what we need
-	original_layer = collision_layer
 	collision_layer = collision_layer ^ 4
 
 func get_shirt(shirtName):
-	rootNode.owned.append(shirtName + "Camisa" + ".png")
+	PlayerVariables.owned.append(shirtName + "Camisa" + ".png")
 	print(shirtName + "Camisa" + ".png")
 	
 func get_hat(hatName):
-	rootNode.owned.append(hatName + "Sombrero" + ".png")
+	PlayerVariables.owned.append(hatName + "Sombrero" + ".png")
 	print(hatName + "Sombrero" + ".png")
 
 func get_accesory(accName):
-	rootNode.owned.append(accName + "Accesorio" + ".png")
+	PlayerVariables.owned.append(accName + "Accesorio" + ".png")
 	print(accName + "Accesorio" + ".png")
 
 func set_used() -> void:
@@ -67,5 +65,4 @@ func set_used() -> void:
 	
 func set_unused() -> void:
 	is_open = false
-	collision_layer = original_layer
 	get_node("Sprite").set_texture(unusedSprite)

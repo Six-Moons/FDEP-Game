@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var changingScene = false
 onready var tween_values = [1, 1.2]
 onready var initialScale = $StartButton.scale
 
@@ -18,9 +19,12 @@ func _start_tween():
 								Tween.EASE_IN_OUT)  
 	$StartButton/Tween.start()
 
-func _process(delta):
-	if Input.is_key_pressed(KEY_ENTER) or Input.is_mouse_button_pressed(BUTTON_LEFT):
-		get_tree().change_scene("res://village.tscn")
+func _input(event):
+	if (Input.is_action_pressed("ui_accept") and !changingScene):
+		changingScene = true
+		SceneChanger.change_scene("res://Levels/village.tscn")
+
+
 
 func _on_Tween_tween_completed(object, key):
 	tween_values.invert()

@@ -17,6 +17,3 @@ visible = false
 position = Vector2( 404.669, 210.398 )
 scale = Vector2( 0.124883, 0.124861 )
 texture = ExtResource( 2 )
-
-[node name="Tween" type="Tween" parent="StartButton"]
-[connection signal="tween_completed" from="StartButton/Tween" to="." method="_on_Tween_tween_completed"]

@@ -48,6 +48,11 @@ config/name="FDEP-Game"
 run/main_scene="res://Titlescreen/Titlescreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerVariables="*res://player_variables.gd"
+SceneChanger="*res://Utils/SceneChanger.tscn"
+
 [display]
 
 window/size/width=480
