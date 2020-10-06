@@ -4,7 +4,9 @@ onready var rootNode = get_parent().get_parent()
 var rng = RandomNumberGenerator.new()
 var random = 0
 var usedSprite = preload("res://Sprites/trash_can_used.png")
+var unusedSprite = preload("res://Sprites/trash_can.png")
 var is_open := false
+var original_layer
 func interaction_can_interact(interactionComponentParent : Node) -> bool:
 	return interactionComponentParent is Player
 
@@ -14,7 +16,7 @@ func _ready():
 func interaction_get_text() -> String:
 	return "Buscar"
 
-func interaction_interact(interactionComponentParent : Node) -> void:
+func interaction_interact(_interactionComponentParent : Node) -> void:
 	if is_open:
 		return
 	print(random)
@@ -44,8 +46,9 @@ func interaction_interact(interactionComponentParent : Node) -> void:
 	# Collision_layer XOR 8 will give all current layers EXCEPT the layer with the bitwsie value 8
 	# If you don't know binary, just hover over the layer in the inspector
 	# In my case it shows "interactable Bit 2, value 4" <- the value is what we need
+	original_layer = collision_layer
 	collision_layer = collision_layer ^ 4
-	
+
 func get_shirt(shirtName):
 	rootNode.owned.append(shirtName + "Camisa" + ".png")
 	print(shirtName + "Camisa" + ".png")
@@ -61,3 +64,8 @@ func get_accesory(accName):
 func set_used() -> void:
 	is_open = true
 	get_node("Sprite").set_texture(usedSprite)
+	
+func set_unused() -> void:
+	is_open = false
+	collision_layer = original_layer
+	get_node("Sprite").set_texture(unusedSprite)

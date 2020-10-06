@@ -2589,3 +2589,4 @@ __meta__ = {
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D9/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D10/Enemy" to="." method="_on_Enemy_grabbed_player"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D10/Enemy" to="HUD" method="_on_Enemy_grabbed_player"]
+[connection signal="full" from="CanvasLayer/Inventario" to="." method="_on_Inventario_full"]
