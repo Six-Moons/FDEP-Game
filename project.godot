@@ -47,6 +47,7 @@ _global_script_class_icons={
 config/name="FDEP-Game"
 run/main_scene="res://Titlescreen/Titlescreen.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
