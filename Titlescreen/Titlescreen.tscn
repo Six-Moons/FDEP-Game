@@ -1,13 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/PantallaInicio.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/start_button.png" type="Texture" id=2]
 [ext_resource path="res://Titlescreen/Titlescreen.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Titlescreen/CreditsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Titlescreen/PlayButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/Minecraft.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 3 )
 
 [node name="Titlescreen" type="Sprite" parent="."]
+visible = false
 position = Vector2( 239.963, 134.888 )
 scale = Vector2( 1.5, 1.7 )
 texture = ExtResource( 1 )
@@ -17,3 +26,73 @@ visible = false
 position = Vector2( 404.669, 210.398 )
 scale = Vector2( 0.124883, 0.124861 )
 texture = ExtResource( 2 )
+
+[node name="TitleScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="TitleScreen"]
+margin_left = 50.0
+margin_top = 30.0
+margin_right = 430.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="TitleScreen/Menu"]
+margin_right = 380.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="TitleScreen/Menu"]
+margin_top = 68.0
+margin_right = 380.0
+margin_bottom = 210.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="TitleScreen/Menu/CenterRow"]
+margin_right = 380.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="PlayButton" parent="TitleScreen/Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
+margin_top = 46.0
+margin_bottom = 66.0
+
+[node name="CreditsButton" parent="TitleScreen/Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 76.0
+margin_bottom = 96.0
+
+[node name="CenterContainer" type="CenterContainer" parent="TitleScreen/Menu/CenterRow"]
+visible = false
+margin_left = 192.0
+margin_right = 380.0
+margin_bottom = 247.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="TextureRect" parent="TitleScreen/Menu/CenterRow/CenterContainer"]
+margin_left = 62.0
+margin_top = 91.0
+margin_right = 126.0
+margin_bottom = 155.0
+texture = ExtResource( 4 )
+
+[node name="VersionLabel" type="Label" parent="TitleScreen/Menu"]
+visible = false
+margin_top = 193.0
+margin_right = 380.0
+margin_bottom = 212.0
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "Version 1.0
+Los Mapachosos"
+valign = 2
