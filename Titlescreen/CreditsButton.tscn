@@ -3,6 +3,7 @@
 [ext_resource path="res://Titlescreen/Menu_Button.tscn" type="PackedScene" id=1]
 
 [node name="CreditsButton" instance=ExtResource( 1 )]
+scene_to_load = "res://Titlescreen/Credits.tscn"
 
 [node name="Label" parent="." index="0"]
 text = "Creditos"
