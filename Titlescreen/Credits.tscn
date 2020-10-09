@@ -47,6 +47,7 @@ valign = 1
 margin_top = 28.0
 margin_right = 100.0
 margin_bottom = 50.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 1 )
 button_mask = 7
 text = "Back"
