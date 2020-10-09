@@ -8,7 +8,7 @@
 [ext_resource path="res://sounds/wub.wav" type="AudioStream" id=6]
 [ext_resource path="res://sounds/gotcha.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/fail.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/walking-in-snow-1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
@@ -372,6 +372,6 @@ rect_scale = Vector2( 1.5, 1 )
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
-attenuation = 0.0126914
+pitch_scale = 0.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

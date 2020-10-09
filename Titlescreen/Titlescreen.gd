@@ -2,6 +2,7 @@ extends Control
 
 var changingScene = false
 onready var tween_values = [1, 1.2]
+var a
 #onready var initialScale = $StartButton.scale
 
 func _ready():
@@ -33,10 +34,10 @@ func _ready():
 
 
 func _on_PlayButton_pressed():
-	get_tree().change_scene($Menu/CenterRow/Buttons/PlayButton.scene_to_load)
+	a = get_tree().change_scene($Menu/CenterRow/Buttons/PlayButton.scene_to_load)
 	pass # Replace with function body.
 
 
 func _on_CreditsButton_pressed():
-	get_tree().change_scene($Menu/CenterRow/Buttons/CreditsButton.scene_to_load)	
+	a = get_tree().change_scene($Menu/CenterRow/Buttons/CreditsButton.scene_to_load)	
 	pass # Replace with function body.

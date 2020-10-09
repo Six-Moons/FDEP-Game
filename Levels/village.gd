@@ -16,9 +16,10 @@ var changingScene = false
 
 func addPathListeners():
 	posPathChild = 0
-	pathChild = $Node2D/Path2D.get_child(posPathChild)
+	var childCount = $Node2D/Path2D.get_child_count()
 	rng.randomize()
-	while pathChild != null:
+	while posPathChild < childCount:
+		pathChild = $Node2D/Path2D.get_child(posPathChild)
 #		self.connect("grabbed_player", pathChild.get_node("Enemy"), "_on_Enemy_grabbed_player")
 		
 		var randNum = int(round(rng.randf_range(0.0, 2.0)))
@@ -29,12 +30,13 @@ func addPathListeners():
 			pathChild.get_node("Enemy/Sprite").set_texture(dante1)
 		
 		posPathChild += 1
-		pathChild = $Node2D/Path2D.get_child(posPathChild)
+		
 	pass
 
 func _ready():
 	addPathListeners()
 	game_state = "Started"
+	$AudioStreamPlayer.play()
 	reset()
 	pass
 
@@ -44,7 +46,7 @@ func reset():
 	PlayerVariables.hasShirt = false
 	PlayerVariables.owned = []
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if game_state == "Started":
 		game_state = "Playing"
 		emit_signal("game_started")
@@ -67,7 +69,7 @@ func _on_Inventario_full():
 	#get_tree().change_scene("res://WinScreen/WinScreen.tscn")
 	
 #DEBUG PURPOSES function to test winScreen without playing through the game xd
-func _input(event):
+func _input(_event):
 	if (Input.is_action_just_pressed("ui_page_down")):
 		PlayerVariables.owned.append("DDDCamisa.png")
 		PlayerVariables.owned.append("MarineroSombrero.png")

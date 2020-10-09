@@ -11,15 +11,16 @@ export var interaction_default_text : String
 var fixed_position : Vector2
 var lastInteractable : Node
 var isInRange : bool
+var a
 
 func _ready():
 	# We need to connect ourselves to the interaction components signal
-	get_node(interaction_component_nodepath).connect("on_interactable_changed", self, "interactable_target_changed", [], CONNECT_DEFERRED)
+	a = get_node(interaction_component_nodepath).connect("on_interactable_changed", self, "interactable_target_changed", [], CONNECT_DEFERRED)
 	isInRange = false;
 	# On load we should be hidden
 	hide()
 	
-func _process(delta : float):
+func _process(_delta : float):
 	# Because we're a child of the player we'll always be moving relative to them
 	# But when we're set against an item we should stick above it
 	# So each frame we'll make sure we're moved to our fixed_position
