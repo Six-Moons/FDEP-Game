@@ -44,3 +44,8 @@ func mostrar_disfraz():
 	disfraz.get_node("Playera").set_texture(playera)
 	disfraz.get_node("Sombrero").set_texture(sombrero)
 	disfraz.get_node("Accesorio").set_texture(accesorio)
+
+
+func _on_Timer_timeout():
+	$Label.show()
+	pass # Replace with function body.

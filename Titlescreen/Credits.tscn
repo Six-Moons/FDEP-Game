@@ -33,9 +33,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 159.0
-margin_top = 53.0
+margin_top = 23.0
 margin_right = 321.0
-margin_bottom = 217.0
+margin_bottom = 247.0
 rect_min_size = Vector2( 100, 50 )
 mouse_filter = 2
 
@@ -55,7 +55,7 @@ valign = 1
 [node name="Creditos" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 36.0
 margin_right = 162.0
-margin_bottom = 138.0
+margin_bottom = 198.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
@@ -68,14 +68,18 @@ Denisse - Artista
 Humberto - Programador
 Nina - Artista
 Assets
-Musica"
+Humanos
+Casas
+Pasto y camino
+Musica y Sonido de Pasos
+Kronbits - 200 Free SFX"
 align = 1
 valign = 1
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 142.0
+margin_top = 202.0
 margin_right = 162.0
-margin_bottom = 164.0
+margin_bottom = 224.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 1 )
 button_mask = 7

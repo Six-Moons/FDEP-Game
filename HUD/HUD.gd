@@ -2,7 +2,7 @@ extends CanvasLayer
 
 func restart():
 	$BlackScreen.hide()
-	$TextEdit.text= ""
+	$TextEdit.hide()
 
 func _ready():
 	restart()
@@ -10,6 +10,6 @@ func _ready():
 #	$Timer.connect("timeout", self, "_on_Timer_timeout")
 
 func _on_Enemy_grabbed_player():
-	$TextEdit.text= "Perdiste unu"
+	$TextEdit.show()
 	$BlackScreen.show()
 	pass # Replace with function body.
