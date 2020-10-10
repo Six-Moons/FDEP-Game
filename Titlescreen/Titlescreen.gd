@@ -41,3 +41,4 @@ func _on_PlayButton_pressed():
 func _on_CreditsButton_pressed():
 	a = get_tree().change_scene($Menu/CenterRow/Buttons/CreditsButton.scene_to_load)	
 	pass # Replace with function body.
+

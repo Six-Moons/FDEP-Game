@@ -14,6 +14,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.34902, 0.298039, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.501961, 0.423529, 0.423529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,3 +46,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="mouse_entered" from="." to="." method="_on_Menu_Button_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Menu_Button_mouse_exited"]
