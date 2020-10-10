@@ -2443,7 +2443,7 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 2/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Village" type="Node2D"]
 script = ExtResource( 7 )
 
 [node name="TileMap_ground" type="TileMap" parent="."]

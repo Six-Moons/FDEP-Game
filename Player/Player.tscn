@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://sounds/gotcha.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/fail.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/fail.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/gotcha.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/wub.wav" type="AudioStream" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
@@ -374,4 +377,16 @@ rect_scale = Vector2( 1.5, 1 )
 stream = ExtResource( 9 )
 pitch_scale = 0.5
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Player" type="AudioStreamPlayer" parent="."]
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Progress" type="AudioStreamPlayer" parent="Players"]
+stream = ExtResource( 12 )
+
+[node name="Finish" type="AudioStreamPlayer" parent="Players"]
+stream = ExtResource( 11 )
+
+[node name="Fail" type="AudioStreamPlayer" parent="Players"]
+stream = ExtResource( 10 )
+[connection signal="sound" from="Sprite/InteractionComponent" to="." method="_on_InteractionComponent_sound"]

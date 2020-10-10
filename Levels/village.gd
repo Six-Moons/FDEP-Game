@@ -65,6 +65,7 @@ func _on_Enemy_grabbed_player():
 
 func _on_Inventario_full():
 	emit_signal("game_stopped")
+	$AudioStreamPlayer.stop()
 	SceneChanger.change_scene("res://WinScreen/WinScreen.tscn")
 	#get_tree().change_scene("res://WinScreen/WinScreen.tscn")
 	

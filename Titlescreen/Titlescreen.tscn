@@ -79,20 +79,6 @@ custom_constants/shadow_offset_y = 2
 text = "Mapachiona Halloween"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Menu/Logo/Label"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 1.52588e-05
-rect_pivot_offset = Vector2( 10, 0 )
-color = Color( 0.34902, 0.290196, 0.290196, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Mapache2" type="TextureRect" parent="Menu/Logo"]
 margin_left = 289.0
