@@ -58,7 +58,7 @@ func _on_InteractionComponent_sound(state):
 #		$Player.stream = soundStream
 #		$Player.play()
 	if state == "Progress":
-		if !$Players/Progress.playing:
+		if !$Players/Progress.playing and !$Players/Finish.playing and !$Players/Fail.playing:
 			$Players/Progress.play()
 	elif state == "Fail":
 		$Players/Progress.stop()

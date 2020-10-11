@@ -7,8 +7,12 @@ func initialize(maximum):
 	max_val = maximum
 	$TextureProgress.max_value = maximum
 
-func _on_interface_progress_changed(progress):
-	if !$Tween.is_active():
+func _on_interface_progress_changed(progress, isProgressing):
+	if isProgressing:
+		if !$Tween.is_active():
+			animate_value(current_progress, progress)
+			current_progress = progress
+	else:
 		animate_value(current_progress, progress)
 		current_progress = progress
 	

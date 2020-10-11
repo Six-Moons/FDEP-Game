@@ -19,17 +19,13 @@ func addPathListeners():
 	rng.randomize()
 	while posPathChild < childCount:
 		pathChild = $Node2D/Path2D.get_child(posPathChild)
-#		self.connect("grabbed_player", pathChild.get_node("Enemy"), "_on_Enemy_grabbed_player")
-		
 		var randNum = int(round(rng.randf_range(0.0, 2.0)))
-		
 		if randNum == 1:
 			pathChild.get_node("Enemy/Sprite").set_texture(dante0)
 		elif randNum == 2:
 			pathChild.get_node("Enemy/Sprite").set_texture(dante1)
 		
 		posPathChild += 1
-		
 	pass
 
 func _ready():

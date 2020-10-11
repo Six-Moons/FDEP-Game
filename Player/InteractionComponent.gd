@@ -18,7 +18,7 @@ func _process(delta):
 		if (Input.is_action_pressed("interact")):
 			interactionCounter += 20 * delta
 			emit_signal("sound", "Progress")
-			pBar._on_interface_progress_changed(interactionCounter)
+			pBar._on_interface_progress_changed(interactionCounter, true)
 			# If so, we'll call interaction_interact() if our target supports it
 			if (interactionCounter >= 100 and interaction_target.has_method("interaction_interact")):
 				emit_signal("sound", "Finish")
@@ -26,11 +26,10 @@ func _process(delta):
 		elif (Input.is_action_just_released("interact")):
 			interactionCounter = 0.0
 			emit_signal("sound", "Fail")
-			pBar._on_interface_progress_changed(interactionCounter)
+			pBar._on_interface_progress_changed(interactionCounter, false)
 
 # Signal triggered when our collider collides with something on the interaction layer
 func _on_InteractionComponent_body_entered(body):
-	
 	var canInteract := false
 	
 	# GDScript lacks the concept of interfaces, so we can't check whether the body implements an interface
@@ -51,5 +50,5 @@ func _on_InteractionComponent_body_exited(body):
 	if (body == interaction_target):
 		interaction_target = null
 		interactionCounter = 0
-		pBar._on_interface_progress_changed(interactionCounter)
+		pBar._on_interface_progress_changed(interactionCounter, false)
 		emit_signal("on_interactable_changed", null)
