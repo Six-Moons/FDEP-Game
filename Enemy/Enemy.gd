@@ -77,6 +77,7 @@ func _on_Grab_body_entered(body):
 func _on_Walk_body_entered(body):
 	if body.is_in_group("player"): 
 #		print(body)
+		$ExclamationMark.show()
 		state = "Pursuing"
 #		player = body
 	pass # Replace with function body.
@@ -85,6 +86,7 @@ func _on_Walk_body_entered(body):
 func _on_Pursue_body_exited(body):
 	if body.is_in_group("player"): 
 #		print(body)
+		$ExclamationMark.hide()
 		state = "Returning"
 	pass # Replace with function body.
 

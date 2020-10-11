@@ -15,6 +15,8 @@ func _ready():
 	setUp()
 
 func _input(event):
+	if Input.is_key_pressed(KEY_SPACE):
+		PlayerVariables.takeScreenshot()
 	if (Input.is_action_pressed("ui_accept") and !changingScene):
 		changingScene = true
 		SceneChanger.change_scene("res://Levels/village.tscn")

@@ -53,8 +53,7 @@ func _on_Node2D_game_started():
 func _on_Node2D_game_stopped():
 	gamePlaying = false
 
-
-func _on_InteractionComponent_sound(state, _soundStream):
+func _on_InteractionComponent_sound(state):
 #	if state != "Progress" or !$Player.playing:
 #		$Player.stream = soundStream
 #		$Player.play()
@@ -62,9 +61,9 @@ func _on_InteractionComponent_sound(state, _soundStream):
 		if !$Players/Progress.playing:
 			$Players/Progress.play()
 	elif state == "Fail":
+		$Players/Progress.stop()
 		$Players/Fail.play()
-		$Players/Progress.stop()
 	elif state == "Finish":
-		$Players/Finish.play()
 		$Players/Progress.stop()
+		$Players/Finish.play()
 	pass # Replace with function body.

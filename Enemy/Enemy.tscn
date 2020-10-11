@@ -1,11 +1,12 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Sprites/betty.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Exclamation_Mark.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 8.06194
-height = 11.5973
+radius = 11.2537
+height = 6.00535
 
 [sub_resource type="Animation" id=2]
 resource_name = "IdleDown"
@@ -116,6 +117,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=9]
 length = 0.8
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -210,14 +212,18 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="ExclamationMark" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -25 )
+texture = ExtResource( 3 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 4
 hframes = 4
-frame = 1
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -241,6 +247,7 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 [node name="Grab" type="Area2D" parent="." groups=[
 "enemy",
 ]]
+visible = false
 
 [node name="GrabRad" type="CollisionShape2D" parent="Grab"]
 shape = SubResource( 24 )
@@ -248,6 +255,7 @@ shape = SubResource( 24 )
 [node name="Pursue" type="Area2D" parent="." groups=[
 "enemy",
 ]]
+visible = false
 
 [node name="PursueRad" type="CollisionShape2D" parent="Pursue"]
 shape = SubResource( 25 )
@@ -255,6 +263,7 @@ shape = SubResource( 25 )
 [node name="Walk" type="Area2D" parent="." groups=[
 "enemy",
 ]]
+visible = false
 
 [node name="WalkRad" type="CollisionShape2D" parent="Walk"]
 shape = SubResource( 26 )

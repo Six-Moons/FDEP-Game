@@ -1,13 +1,10 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Progress_Bar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sounds/wub.wav" type="AudioStream" id=6]
-[ext_resource path="res://sounds/gotcha.wav" type="AudioStream" id=7]
-[ext_resource path="res://sounds/fail.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=9]
 [ext_resource path="res://Sounds/fail.wav" type="AudioStream" id=10]
 [ext_resource path="res://Sounds/gotcha.wav" type="AudioStream" id=11]
@@ -319,9 +316,6 @@ frame = 3
 ] instance=ExtResource( 3 )]
 interaction_parent = NodePath("../..")
 pBar_path = NodePath("../../CanvasLayer/InteractionComponentUI/Progress_Bar")
-progressSound = ExtResource( 6 )
-finishSound = ExtResource( 7 )
-failSound = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )

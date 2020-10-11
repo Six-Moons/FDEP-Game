@@ -9,6 +9,10 @@ func _ready():
 #	_start_tween()
 	pass
 
+func _input(_event):
+	if Input.is_key_pressed(KEY_SPACE):
+		PlayerVariables.takeScreenshot()
+
 #func _start_tween():
 #	$StartButton.scale = initialScale
 #	$StartButton/Tween.interpolate_property($StartButton, 

@@ -3,8 +3,6 @@ extends Node2D
 signal game_started
 signal game_stopped
 
-
-
 #var betty = preload("res://Sprites/betty.png")
 var dante0 = preload("res://Sprites/dante_0.png")
 var dante1 = preload("res://Sprites/dante_1.png")
@@ -13,6 +11,7 @@ var pathChild
 var posPathChild
 var game_state = "Starting"
 var changingScene = false
+var ss = 0
 
 func addPathListeners():
 	posPathChild = 0
@@ -47,6 +46,8 @@ func reset():
 	PlayerVariables.owned = []
 	
 func _physics_process(_delta):
+	if Input.is_key_pressed(KEY_SPACE):
+		PlayerVariables.takeScreenshot()
 	if game_state == "Started":
 		game_state = "Playing"
 		emit_signal("game_started")

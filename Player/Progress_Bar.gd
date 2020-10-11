@@ -8,9 +8,10 @@ func initialize(maximum):
 	$TextureProgress.max_value = maximum
 
 func _on_interface_progress_changed(progress):
-	animate_value(current_progress, progress)
-	current_progress = progress
+	if !$Tween.is_active():
+		animate_value(current_progress, progress)
+		current_progress = progress
 	
 func animate_value(start, end):
-	$Tween.interpolate_property($TextureProgress, "value", start, end, 1, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+	$Tween.interpolate_property($TextureProgress, "value", start, end, 0.6, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 	$Tween.start()
