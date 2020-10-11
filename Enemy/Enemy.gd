@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 signal grabbed_player
 
-const SPEED = 40
-const ACCELERATION = 10
-const FRICTION = 10
+const SPEED = 70
+const ACCELERATION = 15
+const FRICTION = 15
 
 var state = "Walking" # Walking, Pursuing, Returning
 var gamePlaying = false
@@ -25,7 +25,7 @@ func _ready():
 	global_position = get_parent().global_position
 	rng.randomize()
 	var my_random_number = rng.randf_range(-100.0, 100.0)
-	path.set_offset(path.get_offset() + (50 * my_random_number))
+	path.set_offset(path.get_offset() + (SPEED * my_random_number))
 
 func _physics_process(_delta):
 	if gamePlaying:
@@ -38,7 +38,7 @@ func _physics_process(_delta):
 			
 			pos = path.global_position
 			
-			path.set_offset(path.get_offset() + (50 * _delta))
+			path.set_offset(path.get_offset() + (SPEED * _delta))
 			
 			dir = (path.global_position - pos)
 			animationTree.set("parameters/Idle/blend_position", dir.normalized())

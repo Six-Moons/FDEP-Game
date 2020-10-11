@@ -1,9 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
-const SPEED = 100
-const ACCELERATION = 10
-const FRICTION = 10
+const SPEED = 120
+const ACCELERATION = 15
+const FRICTION = 15
 var gamePlaying = false
 
 var velocity = Vector2.ZERO
