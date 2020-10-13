@@ -17,7 +17,7 @@ func takeScreenshot():
 	img.flip_y()
 	
 	rng.randomize()
-	var randNum = int(round(rng.randf_range(0.0, 2.0)))
+	var randNum = int(round(rng.randf_range(0.0, 20.0 + ss)))
 	img.save_png("res://Sprites/ignore/Screenshots/screenshot" + str(randNum) + "_" + str(ss) + ".png")
 	ss += 1
 	pass
