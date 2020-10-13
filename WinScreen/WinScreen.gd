@@ -14,7 +14,7 @@ onready var bgScale = viewportWidth / $Background.texture.get_size().x
 func _ready():
 	setUp()
 
-func _input(event):
+func _input(_event):
 	if Input.is_key_pressed(KEY_SPACE):
 		PlayerVariables.takeScreenshot()
 	if (Input.is_action_pressed("ui_accept") and !changingScene):

@@ -18,8 +18,6 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	var root = get_parent().get_parent().get_parent().get_parent()
-	print (root.has_signal("game_started"))
-	print (root)
 	root.connect("game_started", self, "_on_Village_game_started")
 	root.connect("game_stopped", self, "_on_Village_game_stopped")
 	global_position = get_parent().global_position
@@ -68,7 +66,6 @@ func _physics_process(_delta):
 
 func _on_Grab_body_entered(body):
 	if body.is_in_group("player"): 
-		print("game over buddy")
 		emit_signal("grabbed_player")
 		# game over
 	pass # Replace with function body.
@@ -76,25 +73,20 @@ func _on_Grab_body_entered(body):
 
 func _on_Walk_body_entered(body):
 	if body.is_in_group("player"): 
-#		print(body)
 		$ExclamationMark.show()
 		state = "Pursuing"
-#		player = body
 	pass # Replace with function body.
 
 
 func _on_Pursue_body_exited(body):
-	if body.is_in_group("player"): 
-#		print(body)
+	if body.is_in_group("player"):
 		$ExclamationMark.hide()
 		state = "Returning"
 	pass # Replace with function body.
 
 func _on_Village_game_stopped():
-	print("F")
 	gamePlaying = false
 	pass # Replace with function body.
-
 
 func _on_Village_game_started():
 	gamePlaying = true

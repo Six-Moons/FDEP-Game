@@ -54,7 +54,6 @@ func _physics_process(_delta):
 		pass
 
 func _on_Enemy_grabbed_player():
-	print("ewe")
 	game_state = "Lost"
 	emit_signal("game_stopped")
 	pass # Replace with function body.
@@ -67,9 +66,9 @@ func _on_Inventario_full():
 	#get_tree().change_scene("res://WinScreen/WinScreen.tscn")
 	
 #DEBUG PURPOSES function to test winScreen without playing through the game xd
-func _input(_event):
-	if (Input.is_action_just_pressed("ui_page_down")):
-		PlayerVariables.owned.append("DDDCamisa.png")
-		PlayerVariables.owned.append("MarineroSombrero.png")
-		PlayerVariables.owned.append("MarineroAccesorio.png")
-		SceneChanger.change_scene("res://WinScreen/WinScreen.tscn")
+#func _input(_event):
+#	if (Input.is_action_just_pressed("ui_page_down")):
+#		PlayerVariables.owned.append("DDDCamisa.png")
+#		PlayerVariables.owned.append("MarineroSombrero.png")
+#		PlayerVariables.owned.append("MarineroAccesorio.png")
+#		SceneChanger.change_scene("res://WinScreen/WinScreen.tscn")

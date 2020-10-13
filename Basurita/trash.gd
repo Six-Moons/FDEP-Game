@@ -18,7 +18,7 @@ func interaction_get_text() -> String:
 func interaction_interact(_interactionComponentParent : Node) -> void:
 	if is_open:
 		return
-	print(random)
+#	print(random)
 	if (!PlayerVariables.hasShirt):
 		PlayerVariables.hasShirt = true
 		rng.randomize()
@@ -49,15 +49,15 @@ func interaction_interact(_interactionComponentParent : Node) -> void:
 
 func get_shirt(shirtName):
 	PlayerVariables.owned.append(shirtName + "Camisa" + ".png")
-	print(shirtName + "Camisa" + ".png")
+#	print(shirtName + "Camisa" + ".png")
 	
 func get_hat(hatName):
 	PlayerVariables.owned.append(hatName + "Sombrero" + ".png")
-	print(hatName + "Sombrero" + ".png")
+#	print(hatName + "Sombrero" + ".png")
 
 func get_accesory(accName):
 	PlayerVariables.owned.append(accName + "Accesorio" + ".png")
-	print(accName + "Accesorio" + ".png")
+#	print(accName + "Accesorio" + ".png")
 
 func set_used() -> void:
 	is_open = true
