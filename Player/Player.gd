@@ -47,12 +47,6 @@ func _physics_process(_delta):
 		position.x = clamp( position.x, 0, 1152) 
 		position.y = clamp( position.y, 0, 1264)
 
-func _on_Node2D_game_started():
-	gamePlaying = true
-
-func _on_Node2D_game_stopped():
-	gamePlaying = false
-
 func _on_InteractionComponent_sound(state):
 #	if state != "Progress" or !$Player.playing:
 #		$Player.stream = soundStream
@@ -66,4 +60,13 @@ func _on_InteractionComponent_sound(state):
 	elif state == "Finish":
 		$Players/Progress.stop()
 		$Players/Finish.play()
+	pass # Replace with function body.
+
+
+func _on_Village_game_started():
+	gamePlaying = true
+	pass # Replace with function body.
+
+func _on_Village_game_stopped():
+	gamePlaying = false
 	pass # Replace with function body.

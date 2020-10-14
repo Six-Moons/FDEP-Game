@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Fonts/pixelTextFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Minecraft16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Utils/Inventario.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Sombrero.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Accesorios.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/generic-rpg-ui-inventario01.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Playera.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Sombrero.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Accesorios.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/generic-rpg-ui-inventario01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Playera.png" type="Texture" id=6]
 
 [node name="Inventario" type="Control"]
 margin_left = 5.0

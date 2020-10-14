@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Sprites/TitleScreen.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Minecraft16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Screens/TitleScreen/Titlescreen.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Screens/TitleScreen/CreditsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Screens/TitleScreen/PlayButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Fonts/Minecraft.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://icon32.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 30.0
+margin_right = 430.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="HBoxContainer" parent="Menu"]
+margin_right = 380.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="Mapache" type="TextureRect" parent="Menu/Logo"]
+margin_left = 59.0
+margin_right = 91.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Menu/Logo"]
+margin_left = 95.0
+margin_top = 3.0
+margin_right = 285.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 190, 25 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 2
+text = "Mapachiona Halloween"
+align = 1
+valign = 1
+
+[node name="Mapache2" type="TextureRect" parent="Menu/Logo"]
+margin_left = 289.0
+margin_right = 321.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 380.0
+margin_bottom = 210.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_left = 140.0
+margin_right = 240.0
+margin_bottom = 174.0
+mouse_filter = 2
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="PlayButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
+margin_top = 62.0
+margin_right = 100.0
+margin_bottom = 82.0
+
+[node name="CreditsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 92.0
+margin_right = 100.0
+margin_bottom = 112.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+visible = false
+margin_left = 192.0
+margin_right = 380.0
+margin_bottom = 247.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_left = 62.0
+margin_top = 91.0
+margin_right = 126.0
+margin_bottom = 155.0
+texture = ExtResource( 4 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+visible = false
+margin_top = 193.0
+margin_right = 380.0
+margin_bottom = 212.0
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "Version 1.0
+Los Mapachosos"
+valign = 2
+
+[node name="FadeIn" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
+anims/fade_in = SubResource( 2 )
+[connection signal="pressed" from="Menu/CenterRow/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]

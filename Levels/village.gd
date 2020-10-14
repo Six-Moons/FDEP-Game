@@ -4,8 +4,8 @@ signal game_started
 signal game_stopped
 
 #var betty = preload("res://Sprites/betty.png")
-var dante0 = preload("res://Sprites/dante_0.png")
-var dante1 = preload("res://Sprites/dante_1.png")
+var dante0 = preload("res://Assets/Sprites/dante_0.png")
+var dante1 = preload("res://Assets/Sprites/dante_1.png")
 var rng = RandomNumberGenerator.new()
 var pathChild
 var posPathChild
@@ -62,13 +62,13 @@ func _on_Enemy_grabbed_player():
 func _on_Inventario_full():
 	emit_signal("game_stopped")
 	$AudioStreamPlayer.stop()
-	SceneChanger.change_scene("res://WinScreen/WinScreen.tscn")
+	SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")
 	#get_tree().change_scene("res://WinScreen/WinScreen.tscn")
 	
 #DEBUG PURPOSES function to test winScreen without playing through the game xd
-#func _input(_event):
-#	if (Input.is_action_just_pressed("ui_page_down")):
-#		PlayerVariables.owned.append("DDDCamisa.png")
-#		PlayerVariables.owned.append("MarineroSombrero.png")
-#		PlayerVariables.owned.append("MarineroAccesorio.png")
-#		SceneChanger.change_scene("res://WinScreen/WinScreen.tscn")
+func _input(_event):
+	if (Input.is_action_just_pressed("ui_page_down")):
+		PlayerVariables.owned.append("DDDCamisa.png")
+		PlayerVariables.owned.append("MarineroSombrero.png")
+		PlayerVariables.owned.append("MarineroAccesorio.png")
+		SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")

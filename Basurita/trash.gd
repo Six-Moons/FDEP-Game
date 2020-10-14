@@ -3,8 +3,8 @@ extends StaticBody2D
 onready var rootNode = get_parent().get_parent()
 var rng = RandomNumberGenerator.new()
 var random = 0
-var usedSprite = preload("res://Sprites/trash_can_used.png")
-var unusedSprite = preload("res://Sprites/trash_can.png")
+var usedSprite = preload("res://Assets/Sprites/trash_can_used.png")
+var unusedSprite = preload("res://Assets/Sprites/trash_can.png")
 var is_open := false
 func interaction_can_interact(interactionComponentParent : Node) -> bool:
 	return interactionComponentParent is Player

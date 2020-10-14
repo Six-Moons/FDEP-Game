@@ -1,14 +1,14 @@
 [gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Mapache_Spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Progress_Bar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sounds/fail.wav" type="AudioStream" id=10]
-[ext_resource path="res://Sounds/gotcha.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sounds/wub.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sounds/footstep.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/fail.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sounds/gotcha.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sounds/wub.wav" type="AudioStream" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.3609
