@@ -26,7 +26,7 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 margin_right = 16.0
-margin_bottom = 16.0
+margin_bottom = 20.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,12 +34,17 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
 margin_left = 20.0
-margin_right = 128.0
-margin_bottom = 16.0
+margin_right = 180.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 160, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 3 )
-text = "Interactuar"
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+meta_underlined = false
+text = "'E' para Interactuar"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

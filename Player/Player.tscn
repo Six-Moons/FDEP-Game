@@ -371,8 +371,6 @@ rect_scale = Vector2( 1.5, 1 )
 stream = ExtResource( 9 )
 pitch_scale = 0.5
 
-[node name="Player" type="AudioStreamPlayer" parent="."]
-
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Progress" type="AudioStreamPlayer" parent="Players"]

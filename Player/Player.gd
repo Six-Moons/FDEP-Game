@@ -48,9 +48,6 @@ func _physics_process(_delta):
 		position.y = clamp( position.y, 0, 1264)
 
 func _on_InteractionComponent_sound(state):
-#	if state != "Progress" or !$Player.playing:
-#		$Player.stream = soundStream
-#		$Player.play()
 	if state == "Progress":
 		if !$Players/Progress.playing and !$Players/Finish.playing and !$Players/Fail.playing:
 			$Players/Progress.play()
