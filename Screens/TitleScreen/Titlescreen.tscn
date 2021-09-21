@@ -112,6 +112,7 @@ margin_bottom = 82.0
 margin_top = 92.0
 margin_right = 100.0
 margin_bottom = 112.0
+scene_to_load = "res://Screens/Credits/Credits.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 visible = false
@@ -150,5 +151,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
 anims/fade_in = SubResource( 2 )
+
 [connection signal="pressed" from="Menu/CenterRow/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]

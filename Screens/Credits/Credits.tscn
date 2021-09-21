@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/Minecraft16.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Screens/Menu_Button.gd" type="Script" id=2]
+[ext_resource path="res://Screens/Credits/Credits.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/Minecraft32.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Fonts/Minecraft12.tres" type="DynamicFont" id=4]
 
@@ -117,4 +117,6 @@ mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 1 )
 button_mask = 7
 text = "Back"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_Button_pressed"]

@@ -307,8 +307,8 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 7
 hframes = 4
+vframes = 7
 frame = 3
 
 [node name="InteractionComponent" parent="Sprite" groups=[
@@ -381,4 +381,5 @@ stream = ExtResource( 11 )
 
 [node name="Fail" type="AudioStreamPlayer" parent="Players"]
 stream = ExtResource( 10 )
+
 [connection signal="sound" from="Sprite/InteractionComponent" to="." method="_on_InteractionComponent_sound"]
