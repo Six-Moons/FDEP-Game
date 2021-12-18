@@ -2469,22 +2469,25 @@ position = Vector2( 216, 136 )
 curve = SubResource( 125 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 610.569, 208 )
 rotation = -3.89693e-06
+offset = 354.6
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 256, 584.988 )
 rotation = -3.89693e-06
+offset = 1654.79
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D2" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 623.966, 992 )
 rotation = -3.89693e-06
+offset = 4609.78
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D3" instance=ExtResource( 3 )]
@@ -2497,43 +2500,49 @@ rotate = false
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D4" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 343.972, 1176 )
 rotation = -3.89693e-06
+offset = 3605.09
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D5" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D6" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 896, 576.216 )
 rotation = -3.89693e-06
+offset = 6028.18
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D6" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D7" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 896, 1135.41 )
 rotation = -3.89693e-06
+offset = 4196.09
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D7" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D8" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 434.96, 704 )
 rotation = -3.89693e-06
+offset = 1950.47
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D8" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D9" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 356.761, 448 )
 rotation = -3.89693e-06
+offset = 1418.8
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D9" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D10" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2( 256, 208 )
+position = Vector2( 671.171, 704 )
 rotation = -3.89693e-06
+offset = 2186.69
 rotate = false
 
 [node name="Enemy" parent="Node2D/Path2D/PathFollow2D10" instance=ExtResource( 3 )]

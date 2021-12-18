@@ -4,8 +4,6 @@
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sprites/Exclamation_Mark.png" type="Texture" id=3]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.2537
 height = 6.00535
@@ -206,9 +204,7 @@ radius = 104.06
 [sub_resource type="CircleShape2D" id=26]
 radius = 43.0056
 
-[node name="Enemy" type="KinematicBody2D" groups=[
-"enemy",
-]]
+[node name="Enemy" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -221,8 +217,8 @@ texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-vframes = 4
 hframes = 4
+vframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -246,29 +242,24 @@ parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
-[node name="Grab" type="Area2D" parent="." groups=[
-"enemy",
-]]
+[node name="Grab" type="Area2D" parent="." groups=["enemy"]]
 visible = false
 
 [node name="GrabRad" type="CollisionShape2D" parent="Grab"]
 shape = SubResource( 24 )
 
-[node name="Pursue" type="Area2D" parent="." groups=[
-"enemy",
-]]
+[node name="Pursue" type="Area2D" parent="." groups=["enemy"]]
 visible = false
 
 [node name="PursueRad" type="CollisionShape2D" parent="Pursue"]
 shape = SubResource( 25 )
 
-[node name="Walk" type="Area2D" parent="." groups=[
-"enemy",
-]]
+[node name="Walk" type="Area2D" parent="." groups=["enemy"]]
 visible = false
 
 [node name="WalkRad" type="CollisionShape2D" parent="Walk"]
 shape = SubResource( 26 )
+
 [connection signal="body_entered" from="Grab" to="." method="_on_Grab_body_entered"]
 [connection signal="body_exited" from="Pursue" to="." method="_on_Pursue_body_exited"]
 [connection signal="body_entered" from="Walk" to="." method="_on_Walk_body_entered"]
