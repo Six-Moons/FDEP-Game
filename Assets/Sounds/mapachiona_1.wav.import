@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mapachiona_1.wav-41a4cb23c46553ca3e6ddd3e23874e74.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/mapachiona_1.wav"
+dest_files=[ "res://.import/mapachiona_1.wav-41a4cb23c46553ca3e6ddd3e23874e74.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
