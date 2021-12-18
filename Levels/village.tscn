@@ -5,7 +5,7 @@
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Basurita/trash.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Utils/Inventario.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Sounds/village_music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/mapachiona_1.wav" type="AudioStream" id=6]
 [ext_resource path="res://Levels/village.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sprites/houses.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/gentle forest, moonlight palette.png" type="Texture" id=9]
@@ -2562,6 +2562,8 @@ tile_data = PoolIntArray( -262127, 0, 917509, -262126, 0, 917510, -196597, 0, 91
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -15.0
+autoplay = true
+
 [connection signal="game_started" from="." to="Node2D/Player" method="_on_Village_game_started"]
 [connection signal="game_stopped" from="." to="Node2D/Player" method="_on_Village_game_stopped"]
 [connection signal="grabbed_player" from="Node2D/Path2D/PathFollow2D/Enemy" to="." method="_on_Enemy_grabbed_player"]

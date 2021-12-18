@@ -1,10 +1,13 @@
 extends StaticBody2D
 
+export(String, FILE) var used_sprite_path = ""
+export(String, FILE) var unused_sprite_path = ""
+
 onready var rootNode = get_parent().get_parent()
 var rng = RandomNumberGenerator.new()
 var random = 0
-var usedSprite = preload("res://Assets/Sprites/trash_can_used.png")
-var unusedSprite = preload("res://Assets/Sprites/trash_can.png")
+onready var usedSprite = load(used_sprite_path)
+onready var unusedSprite = load(unused_sprite_path)
 var is_open := false
 func interaction_can_interact(interactionComponentParent : Node) -> bool:
 	return interactionComponentParent is Player
