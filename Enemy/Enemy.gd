@@ -21,9 +21,9 @@ func _ready():
 	root.connect("game_started", self, "_on_Village_game_started")
 	root.connect("game_stopped", self, "_on_Village_game_stopped")
 	global_position = get_parent().global_position
-	rng.randomize()
-	var my_random_number = rng.randf_range(-100.0, 100.0)
-	path.set_offset(path.get_offset() + (SPEED * my_random_number))
+#	rng.randomize()
+#	var my_random_number = rng.randf_range(-100.0, 100.0)
+#	path.set_offset(path.get_offset() + (SPEED * my_random_number))
 
 func _physics_process(_delta):
 	if gamePlaying:
