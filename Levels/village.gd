@@ -26,14 +26,12 @@ func addPathListeners():
 			pathChild.get_node("Enemy/Sprite").set_texture(dante1)
 		
 		posPathChild += 1
-	pass
 
 func _ready():
 	addPathListeners()
 	game_state = "Started"
-	$AudioStreamPlayer.play()
+	$MusicPlayer.play()
 	reset()
-	pass
 
 func reset():
 	PlayerVariables.hasHat = false
@@ -49,26 +47,25 @@ func _physics_process(_delta):
 		emit_signal("game_started")
 	elif game_state == "Lost":
 		if Input.is_action_pressed("ui_accept") and !changingScene:
+			$LossSound.stop()
 			changingScene = true
 			SceneChanger.change_scene("res://Levels/village.tscn")
-		pass
 
 func _on_Enemy_grabbed_player():
 	game_state = "Lost"
 	emit_signal("game_stopped")
-	pass # Replace with function body.
-
+	$MusicPlayer.stop()
+	$LossSound.play()
 
 func _on_Inventario_full():
 	emit_signal("game_stopped")
-	$AudioStreamPlayer.stop()
+	$MusicPlayer.stop()
 	SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")
-	#get_tree().change_scene("res://WinScreen/WinScreen.tscn")
 	
 #DEBUG PURPOSES function to test winScreen without playing through the game xd
 func _input(_event):
 	if (Input.is_action_just_pressed("ui_page_down")):
-		PlayerVariables.owned.append("DDDCamisa.png")
+		PlayerVariables.owned.append("MarineroCamisa.png")
 		PlayerVariables.owned.append("MarineroSombrero.png")
 		PlayerVariables.owned.append("MarineroAccesorio.png")
-		SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")
+		_on_Inventario_full()

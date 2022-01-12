@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Lose_nova.wav-680b4a66b7203e555d0872642ad9bc09.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Lose_nova.wav"
+dest_files=[ "res://.import/Lose_nova.wav-680b4a66b7203e555d0872642ad9bc09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
