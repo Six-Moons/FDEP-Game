@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Win_nova.wav-0bd58290a89e54f9d65b27d82fb25144.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Win_nova.wav"
+dest_files=[ "res://.import/Win_nova.wav-0bd58290a89e54f9d65b27d82fb25144.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
