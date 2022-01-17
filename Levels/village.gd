@@ -60,7 +60,7 @@ func _on_Enemy_grabbed_player():
 func _on_Inventario_full():
 	emit_signal("game_stopped")
 	$MusicPlayer.stop()
-	SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")
+	$WinSound.play()
 	
 #DEBUG PURPOSES function to test winScreen without playing through the game xd
 func _input(_event):
@@ -69,3 +69,7 @@ func _input(_event):
 		PlayerVariables.owned.append("MarineroSombrero.png")
 		PlayerVariables.owned.append("MarineroAccesorio.png")
 		_on_Inventario_full()
+
+func _on_WinSound_finished():
+	SceneChanger.change_scene("res://Screens/WinScreen/WinScreen.tscn")
+	pass # Replace with function body.
